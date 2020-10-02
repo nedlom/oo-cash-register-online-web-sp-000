@@ -1,16 +1,15 @@
 class CashRegister
   
-  attr_accessor :total, :discount, :items, :scan
+  attr_accessor :total, :discount, :items
   
   def initialize(discount = nil)
     @total = 0
     @discount = discount
     @items = []
-    @scan = []
   end
   
   def add_item(title, price, quantity = 1)
-    self.scan << price * quantity
+    @last_purchase = price * quantity
     self.total += price * quantity
     self.items += [title] * quantity
   end
@@ -25,32 +24,10 @@ class CashRegister
   end
   
   def void_last_transaction
-     self.total -= scan[-1]
+     self.total -= last_purchase
   end
   
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # require 'pry'
