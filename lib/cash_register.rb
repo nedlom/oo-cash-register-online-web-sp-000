@@ -13,15 +13,11 @@ class CashRegister
     self.total += price * quantity
     self.items += [title] * quantity
   end
-  
-  def discount_price
-    self.total -= total * discount / 100
-  end
-  
+
   def apply_discount
     if discount
-      
-      "After the discount, the total comes to $#{discount_price}." 
+      self.total -= total * discount / 100
+      "After the discount, the total comes to $#{self.total}." 
     else 
       "There is no discount to apply."
     end
