@@ -21,7 +21,7 @@ class CashRegister
   def apply_discount
     discount ? 
       
-      "After the discount, the total comes to $#{discount_price}." :
+      "After the discount, the total comes to $#{discount_price}." : 
     else
       "There is no discount to apply."
     end
